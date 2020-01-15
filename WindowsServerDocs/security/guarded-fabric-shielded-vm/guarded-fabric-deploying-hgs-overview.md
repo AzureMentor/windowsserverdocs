@@ -1,7 +1,7 @@
 ---
 title: Deploying the Host Guardian Service 
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 310b63d9-5ac7-4961-98ef-103af45d706a
 manager: dongill
@@ -18,7 +18,7 @@ One of the most important goals of providing a hosted environment is to guarante
 
 ## Video: Deploying a guarded fabric 
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/dcd8e99f-36f1-4bc8-b3d2-9576da38d9f1?autoplay=false]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/dcd8e99f-36f1-4bc8-b3d2-9576da38d9f1?autoplay=false]
 
 ## Deployment tasks for guarded fabrics and shielded VMs
 

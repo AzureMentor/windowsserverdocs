@@ -1,7 +1,7 @@
 ---
 title: Developing PowerShell Cmdlets for Nano Server
 description: "porting CIM, .NET cmdlets, C++ "
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -121,9 +121,9 @@ If you're not sure which implementation you've used for existing cmdlets you wan
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
 * \<your product installation location>   
     
- Check in these locations for these details:  
- * CIM cmdlets have .cdxml file extensions.  
- * .NET cmdlets have .dll file extensions, or have assemblies installed to the GAC listed in the .psd1 file under the RootModule, ModuleToProcess, or NestedModules fields.  
+  Check in these locations for these details:  
+  * CIM cmdlets have .cdxml file extensions.  
+  * .NET cmdlets have .dll file extensions, or have assemblies installed to the GAC listed in the .psd1 file under the RootModule, ModuleToProcess, or NestedModules fields.  
 * PowerShell script cmdlets have .psm1 or .ps1 file extensions.   
   
 ## Porting CIM cmdlets  
@@ -132,7 +132,7 @@ Generally, these cmdlets should work in Nano Server without any conversion neces
 ### Building C++ for Nano Server  
 To get C++ DLLs working on Nano Server, compile them for Nano Server rather than for a specific edition.  
   
-For prerequisites and a walkthrough of developing C++ on Nano Server, see [Developing Native Apps on Nano Server](http://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx).  
+For prerequisites and a walkthrough of developing C++ on Nano Server, see [Developing Native Apps on Nano Server](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx).  
   
   
 ## Porting .NET cmdlets  
@@ -145,7 +145,7 @@ The module "Microsoft.PowerShell.NanoServer.SDK" is available in the [PowerShell
   
 The PowerShell Core SDK module exposes cmdlets to set up the correct CoreCLR and PowerShell Core reference assemblies, create a C# project in Visual Studio 2015 targeting those reference assemblies, and set up the remote debugger on a Nano Server machine so that developers can debug their .NET cmdlets running on Nano Server remotely in Visual Studio 2015.  
   
-The PowerShell Core SDK module requires Visual Studio 2015 Update 2. If you do not have Visual Studio 2015 installed, you can install [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx).  
+The PowerShell Core SDK module requires Visual Studio 2015 Update 2. If you do not have Visual Studio 2015 installed, you can install [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx).  
   
 The SDK module also depends on the following feature to be installed in Visual Studio 2015:  
   

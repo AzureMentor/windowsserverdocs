@@ -7,7 +7,7 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 
 ms.technology: identity-adds
 ---
@@ -84,15 +84,15 @@ These new features are not backwards compatible to Windows Server 2008 R2 or old
   
 ![Install a new forest](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSForest.png)  
   
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Dcpromo.exe no longer contains a graphical wizard and no longer installs role or feature binaries. Attempting to run Dcpromo.exe from the Explorer shell returns:  
->   
-> "The Active Directory Domain Services Installation Wizard is relocated in Server Manager. For more information, see https://go.microsoft.com/fwlink/?LinkId=220921."  
->   
+> 
+> "The Active Directory Domain Services Installation Wizard is relocated in Server Manager. For more information, see <https://go.microsoft.com/fwlink/?LinkId=220921>."  
+> 
 > Attempting to run Dcpromo.exe /unattend still installs the binaries, as in previous operating systems, but warns:  
->   
-> "The dcpromo unattended operation is replaced by the ADDSDeployment module for Windows PowerShell. For more information, see https://go.microsoft.com/fwlink/?LinkId=220924."  
->   
+> 
+> "The dcpromo unattended operation is replaced by the ADDSDeployment module for Windows PowerShell. For more information, see <https://go.microsoft.com/fwlink/?LinkId=220924>."  
+> 
 > Windows Server 2012 deprecates dcpromo.exe and it will not be included with future versions of Windows, nor will it receive further enhancements in this operating system. Administrators should discontinue its use and switch to the supported Windows PowerShell modules if they wish to create domain controllers from the command-line.  
   
 #### Prerequisite Checking  
@@ -571,6 +571,6 @@ To accept the reboot prompt automatically, use the **-force** or **-confirm:$fal
 [Windows Server Technical Reference (Windows Server 2003)](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
 [Active Directory Administrative Center: Getting Started (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [Active Directory Administration with Windows PowerShell (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
-[Ask the Directory Services Team (Official Microsoft Commercial Technical Support Blog)](http://blogs.technet.com/b/askds)  
+[Ask the Directory Services Team (Official Microsoft Commercial Technical Support Blog)](https://blogs.technet.com/b/askds)  
   
 

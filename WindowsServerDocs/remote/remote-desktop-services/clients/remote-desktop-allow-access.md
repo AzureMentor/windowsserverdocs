@@ -2,7 +2,7 @@
 title: Remote Desktop - Allow access to your PC
 description: Learn about your options for remotely accessing your PC
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 You can use Remote Desktop to connect to and control your PC from a remote device by using a [Microsoft Remote Desktop client](remote-desktop-clients.md) (available for Windows, iOS, macOS and Android). When you allow remote connections to your PC, you can use another device to connect to your PC and have access to all of your apps, files, and network resources as if you were sitting at your desk.  
 
 > [!NOTE]
-> You can use Remote Desktop to connect to Windows 10 Pro and Enteprise, Windows 8.1 and 8 Enterprise and Pro, Windows 7 Professional, Enterprise, and Ultimate, and Windows Server versions newer than Windows Server 2008. You can't connect to computers running the Home edition (like Windows 10 Home). 
+> You can use Remote Desktop to connect to Windows 10 Pro and Enterprise, Windows 8.1 and 8 Enterprise and Pro, Windows 7 Professional, Enterprise, and Ultimate, and Windows Server versions newer than Windows Server 2008. You can't connect to computers running a Home edition (like Windows 10 Home). 
 
 To connect to a remote PC, that computer must be turned on, it must have a network connection, Remote Desktop must be enabled, you must have network access to the remote computer (this could be through the Internet), and you must have permission to connect. For permission to connect, you must be on the list of users. Before you start a connection, it's a good idea to look up the name of the computer you're connecting to and to make sure Remote Desktop connections are allowed through its firewall.
 
@@ -33,7 +33,7 @@ The simplest way to allow access to your PC from a remote device is using the Re
 ### Windows 10 Fall Creator Update (1709) or later
 
 You can configure your PC for remote access with a few easy steps.
-1. On the device you want to connect to, select **Start**  and the click the **Settings** icon on the left.
+1. On the device you want to connect to, select **Start**  and then click the **Settings** icon on the left.
 2. Select the **System** group followed by the [**Remote Desktop**](ms-settings:remotedesktop) item.
 3. Use the slider to enable Remote Desktop.
 4. It is also recommended to keep the PC awake and discoverable to facilitate connections. Click **Show settings** to enable.
@@ -58,7 +58,7 @@ Be aware that when you enable access to Remote Desktop, you are granting anyone 
 You should ensure that every account that has access to your PC is configured with a strong password.
 
 ## Why allow connections only with Network Level Authentication? 
- 
-If you want to restrict who can access your PC, choose to allow access only with Network Level Authentication (NLA). When you enable this option, users have to authenticate themselves to the network before they can connect to your PC. Allowing connections only from computers running Remote Desktop with NLA is a more secure authentication method that can help protect your computer from malicious users and software. To learn more about NLA and Remote Desktop, check out [Configure NLA for RDS Connections](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx). 
+
+If you want to restrict who can access your PC, choose to allow access only with Network Level Authentication (NLA). When you enable this option, users have to authenticate themselves to the network before they can connect to your PC. Allowing connections only from computers running Remote Desktop with NLA is a more secure authentication method that can help protect your computer from malicious users and software. To learn more about NLA and Remote Desktop, check out [Configure NLA for RDS Connections](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx).
 
 If you're remotely connecting to a PC on your home network from outside of that network, don't select this option.

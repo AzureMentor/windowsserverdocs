@@ -2,7 +2,7 @@
 title: Why Privileged Access Workstations can help secure your organization
 description: How PAW can increase your organization's security posture
 
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 93589778-3907-4410-8ed5-e7b6db406513
 ms.date: 03/13/2019
@@ -30,7 +30,7 @@ In order to provide the greatest security, PAWs should always run the most up-to
 > [!NOTE]
 > Organizations without access to Windows 10 Enterprise can use Windows 10 Pro, which includes many of the critical foundational technologies for PAWs, including Trusted Boot, BitLocker, and Remote Desktop.  Education customers can use Windows 10 Education.  Windows 10 Home should not be used for a PAW.
 >
-> For a comparison matrix of the different editions of Windows 10, read [this article](https://www.microsoft.com/en-us/WindowsForBusiness/Compare).
+> For a comparison matrix of the different editions of Windows 10, read [this article](https://www.microsoft.com/WindowsForBusiness/Compare).
 
 The PAW security controls are focused on mitigating high impact and high probability risks of compromise. These include mitigating attacks on the environment and risks that can decrease the effectiveness of PAW controls over time:
 
@@ -46,7 +46,7 @@ The PAW security controls are focused on mitigating high impact and high probabi
 >
 > For more information on response and recovery guidance, see the "Respond to suspicious activity" and "Recover from a breach" sections of [Mitigating Pass-the-Hash and Other Credential Theft](https://aka.ms/pth), version 2.
 >
-> Visit [Microsoft's Incident Response and Recovery services](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx) page for more information.
+> Visit [Microsoft's Incident Response and Recovery services](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx) page for more information.
 
 ### PAW hardware profiles
 
@@ -92,7 +92,7 @@ In this configuration, daily work that does not require administrative privilege
 
 To configure this, follow the instructions in this guidance for the PAW host, add Client Hyper-V features, create a User VM, and then install a Windows 10 corporate image on the User VM.
 
-Read [Client Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/index) article for more information about this capability. Please note that the operating system in guest virtual machines will need to be licensed per [Microsoft product licensing](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx), also described [here](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf).
+Read [Client Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) article for more information about this capability. Please note that the operating system in guest virtual machines will need to be licensed per [Microsoft product licensing](https://www.microsoft.com/Licensing/product-licensing/products.aspx), also described [here](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf).
 
 #### Simultaneous use - Adding RemoteApp, RDP, or a VDI
 
@@ -134,7 +134,7 @@ This methodology is appropriate for accounts with access to high value assets:
 * **High Sensitivity Information workers** - The approach used in a PAW can also provide protection for highly sensitive information worker tasks and personnel such as those involving pre-announcement Merger and Acquisition activity, pre-release financial reports, organizational social media presence, executive communications, unpatented trade secrets, sensitive research, or other proprietary or sensitive data. This guidance does not discuss the configuration of these information worker scenarios in depth or include this scenario in the technical instructions.
 
     > [!NOTE]
-    > Microsoft IT uses PAWs (internally referred to as "secure admin workstations", or SAWs) to manage secure access to internal high-value systems within Microsoft. This guidance has additional details below on PAW usage at Microsoft in the section "How Microsoft uses admin workstations". For more detailed information on this high value asset environment approach, please refer to the article, [Protecting high-value assets with secure admin workstations](https://msdn.microsoft.com/en-us/library/mt186538.aspx).
+    > Microsoft IT uses PAWs (internally referred to as "secure admin workstations", or SAWs) to manage secure access to internal high-value systems within Microsoft. This guidance has additional details below on PAW usage at Microsoft in the section "How Microsoft uses admin workstations". For more detailed information on this high value asset environment approach, please refer to the article, [Protecting high-value assets with secure admin workstations](https://msdn.microsoft.com/library/mt186538.aspx).
 
 This document will describe why this practice is recommended for protecting high impact privileged accounts, what these PAW solutions look like for protecting administrative privileges, and how to quickly deploy a PAW solution for domain and cloud services administration.
 
@@ -270,7 +270,7 @@ See the [Tier model page](https://aka.ms/tiermodel) for more information on the 
 |Server Maintenance Admins<br />- Tier 1|Yes|A PAW built using the guidance provided in Phase 2 is sufficient for this role.<br /><br />-   A PAW should be used for administrators that update, patch, and troubleshoot enterprise servers and apps running Windows server, Linux, and other operating systems.<br />-   Dedicated management tools may need to be added for PAWs to handle the larger scale of these admins.|
 |User Workstation Admins <br />- Tier 2|Yes|A PAW built using guidance provided in Phase 2 is sufficient for roles that have administrative rights on end user devices (such as helpdesk and deskside support roles).<br /><br />-   Additional applications may need to be installed on PAWs to enable ticket management and other support functions.<br />-   Windows Defender Exploit Guard should be configured on the workstation.<br />    Dedicated management tools may need to be added for PAWs to handle the larger scale of these admins.|
 |SQL, SharePoint, or line of business (LOB) Admin<br />- Tier 1|Yes|A PAW built with Phase 2 guidance is sufficient for this role.<br /><br />-   Additional management tools may need to be installed on PAWs to allow administrators to manage applications without needing to connect to servers using Remote Desktop.|
-|Users Managing Social Media Presence|Partially|A PAW built using the guidance provided in Phase 2 can be used as a starting point to provide security for these role.<br /><br />-   Protect and manage social media accounts using Azure Active Directory (AAD) for sharing, protecting, and tracking access to social media accounts.<br />    For more information on this capability read [this blog post](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx).<br />-   The outbound network restrictions must allow connectivity to these services. This can be done by allowing open internet connections (much higher security risk that negates many PAW assurances) or by allowing only required DNS addresses for the service (may be challenging to obtain).|
+|Users Managing Social Media Presence|Partially|A PAW built using the guidance provided in Phase 2 can be used as a starting point to provide security for these role.<br /><br />-   Protect and manage social media accounts using Azure Active Directory (AAD) for sharing, protecting, and tracking access to social media accounts.<br />    For more information on this capability read [this blog post](https://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx).<br />-   The outbound network restrictions must allow connectivity to these services. This can be done by allowing open internet connections (much higher security risk that negates many PAW assurances) or by allowing only required DNS addresses for the service (may be challenging to obtain).|
 |Standard Users|No|While many hardening steps can be used for standard users, PAW is designed to isolate accounts from the open internet access that most users require for job duties.|
 |Guest VDI/Kiosk|No|While many hardening steps can be used for a kiosk system for guests, the PAW architecture is designed to provide higher security for high sensitivity accounts, not higher security for lower sensitivity accounts.|
 |VIP User (Executive, Researcher, etc.)|Partially|A PAW built using guidance provided in Phase 2 can be used as a starting point to provide security for these roles.<br /><br />-   This scenario is similar to a standard user desktop, but typically has a smaller, simpler, and well-known application profile. This scenario typically requires discovering and protecting sensitive data, services, and applications (which may or may not be installed on the desktops).<br />-   These roles typically require a high degree of security and very high degree of usability, which require design changes to meet user preferences.|
@@ -286,7 +286,7 @@ See the [Tier model page](https://aka.ms/tiermodel) for more information on the 
 
 This guidance contains the detailed instructions for the PAW configuration for the scenarios as noted above. If you have requirements for the other scenarios, you can adapt the instructions based on this guidance yourself or hire a professional services organization like Microsoft to assist with it.
 
-For more information on engaging Microsoft services to design a PAW tailored for your environment, contact your Microsoft representative or visit [this page](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx).
+For more information on engaging Microsoft services to design a PAW tailored for your environment, contact your Microsoft representative or visit [this page](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx).
 
 ## PAW Phased implementation
 
@@ -341,7 +341,7 @@ Phase 1 includes the following steps:
 4. **Acquire and validate the required Windows 10 Enterprise Edition and application software**. Obtain the software required for PAW and validate it using the guidance in [Clean Source for installation media](https://aka.ms/cleansource).
 
    * Windows 10 Enterprise Edition
-   * [Remote Server Administration Tools](https://www.microsoft.com/en-us/download/details.aspx?id=45520) for Windows 10
+   * [Remote Server Administration Tools](https://www.microsoft.com/download/details.aspx?id=45520) for Windows 10
    * [Windows 10 Security Baselines](https://aka.ms/win10baselines)
 
       > [!NOTE]
@@ -508,124 +508,135 @@ In this section, we will configure group policies to prevent privileged administ
 
 1. Create the new **Restrict Workstation Logon** GPO - this setting will restrict Tier 0 and Tier 1 administrator accounts from logging onto standard workstations.  This GPO should be linked to the "Workstations" top-level OU and have the following settings:
    * In Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on as a batch job, select **Define these policy settings** and add the Tier 0 and Tier 1 groups:
-         Enterprise Admins
-         Domain Admins
-         Schema Admins
-         DOMAIN\Administrators
-         Account Operators
-         Backup Operators
-         Print Operators
-         Server Operators
-         Domain Controllers
-         Read-Only Domain Controllers
-         Group Policy Creators Owners
-         Cryptographic Operators
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     BUILTIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > This Group was created earlier in Phase 1.
+     > [!NOTE]
+     > This Group was created earlier in Phase 1.
 
    * In Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on as a service,  select **Define these policy settings** and add the Tier 0 and Tier 1 groups:
-         Enterprise Admins
-         Domain Admins
-         Schema Admins
-         DOMAIN\Administrators
-         Account Operators
-         Backup Operators
-         Print Operators
-         Server Operators
-         Domain Controllers
-         Read-Only Domain Controllers
-         Group Policy Creators Owners
-         Cryptographic Operators
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     BUILTIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > Note: This Group was created earlier in Phase 1
+     > [!NOTE]
+     > Note: This Group was created earlier in Phase 1
 
 2. Create the new **Restrict Server Logon** GPO - this setting will restrict Tier 0 administrator accounts from logging onto Tier 1 servers.  This GPO should be linked to the "Tier 1 Servers" top-level OU and have the following settings:
    * In Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on as a batch job, select **Define these policy settings** and add the Tier 0 groups:
-         Enterprise Admins
-         Domain Admins
-         Schema Admins
-         DOMAIN\Administrators
-         Account Operators
-         Backup Operators
-         Print Operators
-         Server Operators
-         Domain Controllers
-         Read-Only Domain Controllers
-         Group Policy Creators Owners
-         Cryptographic Operators
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     BUILTIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
    * In Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on as a service, select **Define these policy settings** and add the Tier 0 groups:
-         Enterprise Admins
-         Domain Admins
-         Schema Admins
-         DOMAIN\Administrators
-         Account Operators
-         Backup Operators
-         Print Operators
-         Server Operators
-         Domain Controllers
-         Read-Only Domain Controllers
-         Group Policy Creators Owners
-         Cryptographic Operators
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     BUILTIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
    * In Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on locally, select **Define these policy settings** and add the Tier 0 groups:
-         Enterprise Admins
-         Domain Admins
-         Schema Admins
-         Account Operators
-         Backup Operators
-         Print Operators
-         Server Operators
-         Domain Controllers
-         Read-Only Domain Controllers
-         Group Policy Creators Owners
-         Cryptographic Operators
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     BUILTIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
 
 #### Deploy your PAW(s)
 
@@ -645,7 +656,7 @@ In this section, we will configure group policies to prevent privileged administ
 2. Set a unique complex password for the local Administrator account.  Do not use a password that has been used for any other account in the environment.
 
    > [!NOTE]
-   > Microsoft recommends using [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/en-us/download/details.aspx?id=46899) to manage the local Administrator password for all workstations, including PAWs.  If you use LAPS, ensure that you only grant the PAW Maintenance group the right to read LAPS-managed passwords for the PAWs.
+   > Microsoft recommends using [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) to manage the local Administrator password for all workstations, including PAWs.  If you use LAPS, ensure that you only grant the PAW Maintenance group the right to read LAPS-managed passwords for the PAWs.
 
 3. Install Remote Server Administration Tools for Windows 10 using the clean source installation media.
 4. Configure Windows Defender Exploit Guard
@@ -675,36 +686,36 @@ In this section, we will configure group policies to prevent privileged administ
 
 10. (Optional) Download and install required remote access software. If administrators will be using the PAW remotely for administration, install the remote access software using security guidance from your remote access solution vendor. Ensure to obtain all installation media using the guidance in Clean Source for installation media.
 
-   > [!NOTE]
-   > Carefully consider all the risks involved in allowing remote access via a PAW.  While a mobile PAW enables many important scenarios, including work from home, remote access software can potentially be vulnerable to attack and used to compromise a PAW.
+    > [!NOTE]
+    > Carefully consider all the risks involved in allowing remote access via a PAW.  While a mobile PAW enables many important scenarios, including work from home, remote access software can potentially be vulnerable to attack and used to compromise a PAW.
 
 11. Validate the integrity of the PAW system by reviewing and confirming that all appropriate settings are in place using the steps below:
-   1. Confirm that only the PAW-specific group policies are applied to the PAW
-      1. Open an elevated command prompt and enter the following command: `Gpresult /scope computer /r`
-      2. Review the resulting list and ensure that the only group policies that appear are the ones you created above.
-   2. Confirm that no additional user accounts are members of privileged groups on the PAW using the steps below:
-      1. Open **Edit Local Users and Groups** (lusrmgr.msc), select **Groups**, and confirm that the only members of the local Administrators group are the local Administrator account and the PAW Maintenance global security group.
+    1. Confirm that only the PAW-specific group policies are applied to the PAW
+       1. Open an elevated command prompt and enter the following command: `Gpresult /scope computer /r`
+       2. Review the resulting list and ensure that the only group policies that appear are the ones you created above.
+    2. Confirm that no additional user accounts are members of privileged groups on the PAW using the steps below:
+       1. Open **Edit Local Users and Groups** (lusrmgr.msc), select **Groups**, and confirm that the only members of the local Administrators group are the local Administrator account and the PAW Maintenance global security group.
 
-         > [!NOTE]
-         > The PAW Users group should not be a member of the local Administrators group.  The only members should be the local Administrator account and the PAW Maintenance global security group (and PAW Users should not be a member of that global group either).
+          > [!NOTE]
+          > The PAW Users group should not be a member of the local Administrators group.  The only members should be the local Administrator account and the PAW Maintenance global security group (and PAW Users should not be a member of that global group either).
 
-      2. Also using **Edit Local Users and Groups**, ensure that the following groups have no members:
-         Backup Operators
-         Cryptographic Operators
-         Hyper-V Administrators
-         Network Configuration Operators
-         Power Users
-         Remote Desktop Users
-         Replicators
+       2. Also using **Edit Local Users and Groups**, ensure that the following groups have no members:
+          Backup Operators
+          Cryptographic Operators
+          Hyper-V Administrators
+          Network Configuration Operators
+          Power Users
+          Remote Desktop Users
+          Replicators
 
-12. (Optional) If your organization uses a security information and event management (SIEM) solution, ensure that the PAW is [configured to forward events to the system using Windows Event Forwarding (WEF)](http://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx) or is otherwise registered with the solution so that the SIEM is actively receiving events and information from the PAW.  The details of this operation will vary based on your SIEM solution.
+12. (Optional) If your organization uses a security information and event management (SIEM) solution, ensure that the PAW is [configured to forward events to the system using Windows Event Forwarding (WEF)](https://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx) or is otherwise registered with the solution so that the SIEM is actively receiving events and information from the PAW.  The details of this operation will vary based on your SIEM solution.
 
-   > [!NOTE]
-   > If your SIEM requires an agent which runs as system or a local administrative account on the PAWs, ensure that the SIEMs are managed with the same level of trust as your domain controllers and identity systems.
+    > [!NOTE]
+    > If your SIEM requires an agent which runs as system or a local administrative account on the PAWs, ensure that the SIEMs are managed with the same level of trust as your domain controllers and identity systems.
 
 13. (Optional) If you chose to deploy LAPS to manage the password for the local Administrator account on your PAW, verify that the password is registered successfully.
 
-   * Using an account with permissions to read LAPS-managed passwords, open **Active Directory Users and Computers** (dsa.msc).  Ensure that Advanced Features is enabled, and then right-click the appropriate computer object.  Select the Attribute Editor tab and confirm that the value for msSVSadmPwd is populated with a valid password.
+    * Using an account with permissions to read LAPS-managed passwords, open **Active Directory Users and Computers** (dsa.msc).  Ensure that Advanced Features is enabled, and then right-click the appropriate computer object.  Select the Attribute Editor tab and confirm that the value for msSVSadmPwd is populated with a valid password.
 
 ### Phase 2: Extend PAW to all administrators
 
@@ -770,7 +781,7 @@ Enable this feature on your existing servers and workstations, then enforce the 
 
          > [!NOTE]
          > You will need to update the *proxy.pac* file after downloading to ensure that it is up-to-date and complete.  
-         > Microsoft publishes all current Office 365 and Azure URLs in the Office [Support Center](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US). These instructions assume that you will be using Internet Explorer (or Microsoft Edge) for administration of Office 365, Azure, and other cloud services. Microsoft recommends configuring similar restrictions for any 3rd party browsers that you require for administration. Web browsers on PAWs should only be used for administration of cloud services, and never for general web browsing.
+         > Microsoft publishes all current Office 365 and Azure URLs in the Office [Support Center](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US). These instructions assume that you will be using Internet Explorer (or Microsoft Edge) for administration of Office 365, Azure, and other cloud services. Microsoft recommends configuring similar restrictions for any 3rd party browsers that you require for administration. Web browsers on PAWs should only be used for administration of cloud services, and never for general web browsing.
          >
          > You may need to add other valid Internet destinations to add to this list for other IaaS provider, but do not add productivity, entertainment, news, or search sites to this list.
          >
@@ -792,7 +803,7 @@ Enable this feature on your existing servers and workstations, then enforce the 
             6. Value data: enter the complete URL to the *proxy.pac* file, including http:// and the file name - for example http://proxy.fabrikam.com/proxy.pac.  The URL can also be a single-label URL - for example, http://proxy/proxy.pac
 
                > [!NOTE]
-               > The PAC file can also be hosted on a file share, with the syntax of file://server.fabrikan.com/share/proxy.pac but this requires allowing the file:// protocol. See the "NOTE: File://-based Proxy Scripts Deprecated" section of this [Understanding Web Proxy Configuration](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx) blog for additional detail on configuring the required registry value.
+               > The PAC file can also be hosted on a file share, with the syntax of file://server.fabrikan.com/share/proxy.pac but this requires allowing the file:// protocol. See the "NOTE: File://-based Proxy Scripts Deprecated" section of this [Understanding Web Proxy Configuration](https://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx) blog for additional detail on configuring the required registry value.
 
             7. Click the **Common** tab and select **Remove this item when it is no longer applied**.
             8. On the **Common** tab select **Item level targeting** and click **Targeting**.
@@ -882,8 +893,8 @@ Enable this feature on your existing servers and workstations, then enforce the 
 
 10. Develop a request and distribution method for deploying PAWs at scale in your organization.  Depending on the number of PAWs you choose to deploy in Phase 2, you may need to automate the process.
 
-   * Consider developing a formal request and approval process for administrators to use to obtain a PAW.  This process would help standardize the deployment process, ensure accountability for PAW devices, and help identify gaps in PAW deployment.
-   * As stated previously, this deployment solution should be separate from existing automation methods (which may have already been compromised) and should follow the principles outlined in Phase 1.
+    * Consider developing a formal request and approval process for administrators to use to obtain a PAW.  This process would help standardize the deployment process, ensure accountability for PAW devices, and help identify gaps in PAW deployment.
+    * As stated previously, this deployment solution should be separate from existing automation methods (which may have already been compromised) and should follow the principles outlined in Phase 1.
 
         > [!NOTE]
         > Any system which manages resources should itself managed at the same or higher trust level.
@@ -891,13 +902,13 @@ Enable this feature on your existing servers and workstations, then enforce the 
 11. Review and if necessary deploy additional PAW hardware profiles.  The hardware profile you chose for Phase 1 deployment may not be suitable for all administrators.  Review the hardware profiles and if appropriate select additional PAW hardware profiles to match the needs of the administrators.  For example, the Dedicated Hardware profile (separate PAW and daily use workstations) may be unsuitable for an administrator who travels often - in this case, you might choose to deploy the Simultaneous Use profile (PAW with user VM) for that administrator.
 12. Consider the cultural, operational, communications, and training needs which accompany an extended PAW deployment.   Such a significant change to an administrative model will naturally require change management to some degree, and it is essential to build that into the deployment project itself.  Consider at a minimum the following:
 
-   * How will you communicate the changes to senior leadership to ensure their support?  Any project without senior leadership backing is likely to fail, or at the very least struggle for funding and broad acceptance.
-   * How will you document the new process for administrators?  These changes must be documented and communicated not only to existing administrators (who must change their habits and manage resources in a different way), but also for new administrators (those promoted from within or hired from outside the organization).  It is essential that the documentation is clear and fully articulates the importance of the threats, PAW's role in protecting the admins, and how to use PAW correctly.
+    * How will you communicate the changes to senior leadership to ensure their support?  Any project without senior leadership backing is likely to fail, or at the very least struggle for funding and broad acceptance.
+    * How will you document the new process for administrators?  These changes must be documented and communicated not only to existing administrators (who must change their habits and manage resources in a different way), but also for new administrators (those promoted from within or hired from outside the organization).  It is essential that the documentation is clear and fully articulates the importance of the threats, PAW's role in protecting the admins, and how to use PAW correctly.
 
       > [!NOTE]
       > This is especially important for roles with high turnover, including but not limited to help desk personnel.
 
-   * How will you ensure compliance with the new process?  While the PAW model includes several technical controls to prevent the exposure of privileged credentials, it is impossible to fully prevent all possible exposure purely using technical controls.  For example, although it is possible to prevent an administrator from successfully logging onto a user desktop with privileged credentials, the simple act of attempting the logon can expose the credentials to malware installed on that user desktop.  It is therefore essential that you articulate not only the benefits of the PAW model, but the risks of non-compliance.  This should be complemented by auditing and alerting so that credential exposure can be quickly detected and addressed.
+    * How will you ensure compliance with the new process?  While the PAW model includes several technical controls to prevent the exposure of privileged credentials, it is impossible to fully prevent all possible exposure purely using technical controls.  For example, although it is possible to prevent an administrator from successfully logging onto a user desktop with privileged credentials, the simple act of attempting the logon can expose the credentials to malware installed on that user desktop.  It is therefore essential that you articulate not only the benefits of the PAW model, but the risks of non-compliance.  This should be complemented by auditing and alerting so that credential exposure can be quickly detected and addressed.
 
 ### Phase 3: Extend and enhance protection
 
@@ -919,7 +930,7 @@ Follow the steps below to configure this phase:
 2. **Whitelist trusted applications using Windows Defender Application Control and/or AppLocker**.  By limiting the ability of untrusted or unsigned code to run on a PAW, you further reduce the likelihood of malicious activity and compromise.  Windows includes two primary options for application control:
 
    * **AppLocker**:  AppLocker helps administrators control which applications can run on a given system.  AppLocker can be centrally controlled through group policy, and applied to specific users or groups (for targeted application to users of PAWs).  For more information on AppLocker, please refer to the TechNet article [AppLocker Overview](https://technet.microsoft.com/library/hh831440.aspx).
-   * **Windows Defender Application Control**:  the new Windows Defender Application Control feature provides enhanced hardware-based application control which, unlike AppLocker, cannot be overridden on the impacted device.  Like AppLocker, Windows Defender Application Control can be controlled via group policy and targeted to specific users.  For more information on restricting application usage with Windows Defender Application Control, please refer to [Windows Defender Application Control Deployment Guide](https://docs.microsoft.com/en-gb/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
+   * **Windows Defender Application Control**:  the new Windows Defender Application Control feature provides enhanced hardware-based application control which, unlike AppLocker, cannot be overridden on the impacted device.  Like AppLocker, Windows Defender Application Control can be controlled via group policy and targeted to specific users.  For more information on restricting application usage with Windows Defender Application Control, please refer to [Windows Defender Application Control Deployment Guide](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
 
 3. **Use Protected Users, Authentication Policies, and Authentication Silos to further protect privileged accounts**.  The members of Protected Users are subject to additional security policies which protect the credentials stored in the local security agent (LSA) and greatly minimize the risk of credential theft and reuse.  Authentication policies and silos control how privileged users can access resources in the domain.  Collectively, these protections dramatically strengthen the account security of these privileged users.  For additional details on these features, please refer to the web article [How to Configure Protected Accounts](https://technet.microsoft.com/library/dn518179.aspx).
 
@@ -974,7 +985,7 @@ When using shielded VM-based PAWs, the [recommended GPO settings](#create-paw-co
 ### Set up the Host Guardian Service
 
 The Host Guardian Service is responsible for attesting to the identity and health of a physical PAW device.
-Only those machines which are known to HGS and running a trusted [code integrity policy](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) are allowed to start up shielded VMs.
+Only those machines which are known to HGS and running a trusted [code integrity policy](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) are allowed to start up shielded VMs.
 This helps protect the shielded VMs, which run trusted workloads to manage your tiered resources, from user desktop environment threats.
 
 Since HGS is responsible for determining which devices can run PAW VMs, it is considered a Tier 0 resource.
@@ -1062,7 +1073,7 @@ Once the template disk and shielding data file are ready, you can deploy an admi
 
 ## Related topics
 
-[Engaging Microsoft Cybersecurity Services](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)
+[Engaging Microsoft Cybersecurity Services](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)
 
 [Taste of Premier: How to Mitigate Pass-the-Hash and Other Forms of Credential Theft](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
 
@@ -1072,20 +1083,20 @@ Once the template disk and shielding data file are ready, you can deploy an admi
 
 [Device Guard Overview](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)
 
-[Protecting high-value assets with secure admin workstations](https://msdn.microsoft.com/en-us/library/mt186538.aspx)
+[Protecting high-value assets with secure admin workstations](https://msdn.microsoft.com/library/mt186538.aspx)
 
 [Isolated User Mode in Windows 10 with Dave Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 
-[Isolated User Mode Processes and Features in Windows 10 with Logan Gabriel (Channel 9)](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
+[Isolated User Mode Processes and Features in Windows 10 with Logan Gabriel (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
 
 [More on Processes and Features in Windows 10 Isolated User Mode with Dave Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
 
 [Mitigating Credential Theft using the Windows 10 Isolated User Mode (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
 
-[Enabling Strict KDC Validation in Windows Kerberos](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
+[Enabling Strict KDC Validation in Windows Kerberos](https://www.microsoft.com/download/details.aspx?id=6382)
 
 [What's New in Kerberos Authentication for Windows Server 2012](https://technet.microsoft.com/library/hh831747.aspx)
 
 [Authentication Mechanism Assurance for AD DS in Windows Server 2008 R2 Step-by-Step Guide](https://technet.microsoft.com/library/dd378897(v=ws.10).aspx)
 
-[Trusted Platform Module](C:\sd\docs\p_ent_keep_secure\p_ent_keep_secure\trusted_platform_module_technology_overview.xml)
+[Trusted Platform Module](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)

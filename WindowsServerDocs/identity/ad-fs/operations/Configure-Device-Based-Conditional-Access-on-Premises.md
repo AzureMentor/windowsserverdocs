@@ -7,7 +7,7 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 
 ms.technology: identity-adfs
 ---
@@ -15,7 +15,6 @@ ms.technology: identity-adfs
 
 # Configure On-Premises Conditional Access using registered devices
 
->Applies To: Windows Server 2016, Windows Server 2012 R2  
 
 The following document will guide you through installing and configuring on-premises conditional access with registered devices.
 
@@ -28,7 +27,7 @@ The following per-requisites are required before you can begin with on-premises 
 |-----|-----
 |An Azure AD subscription with Azure AD Premium | To enable device write back for on premises conditional access - [a free trial is fine](https://azure.microsoft.com/trial/get-started-active-directory/)  
 |Intune subscription|only required for MDM integration for device compliance scenarios -[a free trial is fine](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
-|Azure AD Connect|November 2015 QFE or later.  Get the latest version [here](https://www.microsoft.com/en-us/download/details.aspx?id=47594).  
+|Azure AD Connect|November 2015 QFE or later.  Get the latest version [here](https://www.microsoft.com/download/details.aspx?id=47594).  
 |Windows Server 2016|Build 10586 or newer for AD FS  
 |Windows Server 2016 Active Directory schema|Schema level 85 or higher is required.
 |Windows Server 2016 domain controller|This is only required for Hello For Business key-trust deployments.  Additional information can be found at [here](https://aka.ms/whfbdocs).  
@@ -90,11 +89,11 @@ If your AD FS farm is not already configured for Device Authentication (you can 
 
 ![Device Registration](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
-2.  On your AD FS primary server, ensure you are logged in as AD DS user with Enterprise Admin (EA ) privileges and open an elevated powershell prompt.  Then, execute the following PowerShell commands:  
+2. On your AD FS primary server, ensure you are logged in as AD DS user with Enterprise Admin (EA ) privileges and open an elevated powershell prompt.  Then, execute the following PowerShell commands:  
     
-    `Import-module activedirectory`  
-	`PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
-3.  On the pop-up window hit Yes.
+   `Import-module activedirectory`  
+   `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
+3. On the pop-up window hit Yes.
 
 >Note: If your AD FS service is configured to use a GMSA account, enter the account name in the format "domain\accountname$"
 
@@ -109,7 +108,7 @@ The above PSH creates the following objects:
 
 ![Device Registration](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)  
 
-4.  Once this is done, you will see a successful completion message.
+4. Once this is done, you will see a successful completion message.
 
 ![Device Registration](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
 
@@ -129,9 +128,9 @@ If you plan to use Windows 10 domain join (with automatic registration to Azure 
 
 ![Device Registration](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png) 
 
-3.  Run the following PowerShell command 
+3. Run the following PowerShell command 
 
-    `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
+   `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
 
 Where the [AD connector account name] is the name of the account you configured in Azure AD Connect when adding your on-premises AD DS directory.
   
@@ -178,7 +177,7 @@ For your reference, below is a comprehensive list of the AD DS devices, containe
 - object of type serviceConnectionpoint at CN=&lt;guid&gt;, CN=Device Registration
 
 - Configuration,CN=Services,CN=Configuration,DC=&lt;domain&gt;  
- - read/write access to the specified AD connector account name on the new object</br></br> 
+  - read/write access to the specified AD connector account name on the new object</br></br> 
 
 
 - object of type msDS-DeviceRegistrationServiceContainer at CN=Device Registration Services,CN=Device Registration Configuration,CN=Services,CN=Configuration,DC=&ltdomain>  
